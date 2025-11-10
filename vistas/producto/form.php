@@ -40,7 +40,7 @@ $valId     = $esEdicion ? (int)$producto->getId() : 0;
 
     <div class="mb-3">
     <label class="form-label">Stock</label>
-    <input class="form-control" name="stock" type="number" required
+    <input class="form-control" name="stock" type="number"
            value="<?= htmlspecialchars($valStock) ?>">
   </div>
 <div class="mb-3">
