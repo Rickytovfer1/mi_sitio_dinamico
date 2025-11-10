@@ -30,11 +30,12 @@ class Database {
         if (self::$conexion === null) {
             $host = 'localhost';
             $db   = 'tienda_php';
+            $port = '3307';
             $user = 'root';
-            $pass = '';
+            $pass = '123456';
             $charset = 'utf8mb4';
 
-            $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+            $dsn = "mysql:host=$host;port=$port;dbname=$db;charset=$charset";
             $options = [
                 PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
                 PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
