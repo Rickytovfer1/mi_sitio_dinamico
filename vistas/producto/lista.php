@@ -31,9 +31,14 @@ $esManager = ($rol === 'manager');
       <td><?= htmlspecialchars($p->nombre) ?></td>
       <td><?= number_format((float)$p->precio, 2, ',', '.') ?></td>
       <td><?= htmlspecialchars((int)$p->stock) ?></td>
-      <td><?= htmlspecialchars($p->descripcion) ?></td>
+      <?php
+      $desc = $p->descripcion ?? '';
+      $descTrunc = mb_strimwidth($desc, 0, 20, '...');
+      ?>
+      <td title="<?= htmlspecialchars($desc) ?>"><?= htmlspecialchars($descTrunc) ?></td>
       <?php if ($esManager): ?>
         <td>
+          <a href="#=<?= htmlspecialchars((string)$p->getId()) ?>" class="btn btn-sm btn-info">Detalle</a>
           <a href="index.php?p=productos&action=editar&id=<?= htmlspecialchars((string)$p->getId()) ?>" class="btn btn-sm btn-warning">✏️ Editar</a>
           <!-- Eliminar SIEMPRE por POST, no GET -->
           <form method="post" action="index.php?p=productos&action=eliminar" class="d-inline" onsubmit="return confirm('¿Seguro que deseas eliminar este producto?');">

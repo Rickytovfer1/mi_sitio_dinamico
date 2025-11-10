@@ -40,12 +40,12 @@ $valId     = $esEdicion ? (int)$producto->getId() : 0;
 
     <div class="mb-3">
     <label class="form-label">Stock</label>
-    <input class="form-control" name="stock" type="number"min="0" required
+    <input class="form-control" name="stock" type="number" required
            value="<?= htmlspecialchars($valStock) ?>">
   </div>
 <div class="mb-3">
   <label class="form-label">Descripción</label>
-  <textarea class="form-control" name="descripcion" maxlength="120" required><?= htmlspecialchars($valDescripcion) ?></textarea>
+  <textarea class="form-control" name="descripcion" maxlength="120" ><?= htmlspecialchars($valDescripcion) ?></textarea>
 </div>
 
 
